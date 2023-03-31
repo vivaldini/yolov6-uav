@@ -1,0 +1,24 @@
+<launch>
+    <arg name="UAV_NAME" default="$(optenv UAV_NAME uav1)" />
+    <node pkg="yolo-uav" type="detect.py" name="detect" output="screen" ns="yolov6">
+        <!-- Download the official weights from the original repo -->
+        <param name="weights_path" type="str" value="$(find yolo-uav)/launch/yolo_weights/best_ckpt.pt" />
+        <!-- topic name to subscribe to -->
+        <param name="img_topic" type="str" value="/$(arg UAV_NAME)/bluefox_optflow/image_raw" />
+        <!-- topic name for the detection output -->
+        <param name="out_topic" type="str" value="yolov6" />
+        <!-- confidence threshold -->
+        <param name="conf_thresh" type="double" value="0.5" />
+        <!-- intersection over union threshold -->
+        <param name="iou_thresh" type="double" value="0.45" />
+        <!-- queue size for publishing -->
+        <param name="queue_size" type="int" value="1" />
+        <!-- image size to which to resize each input image before feeding into the
+        network (the final output is rescaled to the original image size) -->
+        <param name="img_size" type="int" value="640" />
+        <!-- flag whether to also publish image with the visualized detections -->
+        <param name="visualize" type="bool" value="true" />
+        <!-- 'cuda' or 'cpu' -->
+        <param name="device" type="str" value="cpu" />
+    </node>
+</launch>
