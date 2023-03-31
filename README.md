@@ -89,8 +89,7 @@ catkin build yolov6-uav
 
 - Parameters configuration
  
-In the file ~/Your_worspace/ocean_trash_world/offshore_uav_pack/start/session.yml, line 21 change the world environment and if necessary the camera
-"ballontrash.launch" to "trash.launch"
+In the file ~/Your_worspace/ocean_trash_world/offshore_uav_pack/start/session.yml, line 21 change the world environment "ballontrash.launch" to "trash.launch",  and if necessary the camera.
 
 In the file ~/Your_worspace/yolov6-uav/src/detect.py line 150, change it for your worspace and choose the weigths for your trainning models. For the garbage set as yolo_v6_simulated.pt
 
