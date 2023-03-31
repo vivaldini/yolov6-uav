@@ -68,7 +68,7 @@ Clone this repository into your catkin workspace:
 
 ```bash
 cd ~/Your_worspace/src
-git clone https://github.com/vivaldini/Yolo 
+git clone https://github.com/vivaldini/yolo-uav 
 ```
 
 The Python requirements are listed in the requirements.txt. You can simply install them as
@@ -82,7 +82,7 @@ Build the package
 
 ```bash
 cd ~/Your_worspace/src/yolov6-uav
-catkin build yolov6-uav
+catkin build
 ```
 
 ### Using the simulator and Testing the Yolo
